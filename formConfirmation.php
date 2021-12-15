@@ -2,13 +2,13 @@
 //セッションの開始
 session_start();
 // ニックネーム
-$textData = $_SESSION["textData"];
+$textName = $_SESSION["textName"];
 // おすすめのカフェの名前
-$textDataName = $_SESSION["textDataName"];
-//　おすすめのカフェのURL
-$textDataURL = $_SESSION["textDataURL"];
+$textArea = $_SESSION["textArea"];
+//おすすめのカフェのURL
+$textGenre = $_SESSION["textGenre"];
 // SNSを知らせるか選択
-$selectData = $_SESSION["selectData"]; 
+$textMessage = $_SESSION["textMessage"];
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -29,11 +29,11 @@ $selectData = $_SESSION["selectData"];
         </tr>
         <?php
         echo "<tr>";
-        echo "<td>" . $textData . "</td>";
-        echo "<td>" . $textDataName . "</td>";
-        echo "<td>" . $textDataURL . "</td>";
-        echo "<td>" . $selectData . "</td>";
-        echo "</tr>"; 
+        echo "<td>" . $textName . "</td>";
+        echo "<td>" . $textArea . "</td>";
+        echo "<td>" . $textGenre . "</td>";
+        echo "<td>" . $textMessage . "</td>";
+        echo "</tr>";
         ?>
     </table>
     <button onclick="location.href='./QRcreate.php'">遷移</button>
@@ -43,11 +43,12 @@ $selectData = $_SESSION["selectData"];
 
 <?php
 // 入力データを出力後に、セッションを削除
-unset($_SESSION["textData"]);
-unset($_SESSION["textDataName"]);
-unset($_SESSION["textDataURL"]);
-unset($_SESSION["selectData"]);
-unset($_SESSION["errorTextData"]);
-unset($_SESSION["errortextDataName"]);
-unset($_SESSION["errortextDataURL"]);
+unset($_SESSION["textName"]);
+unset($_SESSION["textArea"]);
+unset($_SESSION["textGenre"]);
+unset($_SESSION["textMessage"]);
+unset($_SESSION["errorName"]);
+unset($_SESSION["errorArea"]);
+unset($_SESSION["errorGenre"]);
+unset($_SESSION["errorMessage"]);
 ?>
