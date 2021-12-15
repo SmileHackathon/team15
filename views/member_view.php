@@ -15,5 +15,6 @@ Email:<?php echo html_escape($member['email']); ?>) <a href="logout.php">ログ�
 <?php foreach($members as $member): ?>
 <li><?php echo html_escape($member['name']); ?></li>
 <?php endforeach; ?>
+<p><a href="./index.php">ホームに戻る</a></p>
 </body>
 </html>
