@@ -63,7 +63,7 @@ input {
 
 
 /* スマホ(横幅480px以下の場合) */
-@media screen and (max-width:500px) {
+@media screen and (max-width:480px) {
     
     /*  header(ヘッダー)  */
     .header {
