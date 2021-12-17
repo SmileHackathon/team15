@@ -11,6 +11,13 @@ function get_post($key){
     }
 }
 
+function get_get($key){
+    if(isset($_GET[$key])){
+        $var = trim($_GET[$key]);
+        return $var;
+    }
+}
+
 function check_words($word, $length) {
 
     if(mb_strlen($word) === 0){

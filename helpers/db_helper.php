@@ -45,6 +45,34 @@ function insert_member_data($dbh, $name, $email, $password){
     }
 }
 
+function insert_restaurant_data($dbh, $Restaurant_name, $Restaurant_erea, $Restaurant_genre, $Restaurant_message, $member_id){
+
+    $sql = "INSERT INTO resutaurant (Resturant_name, Resturant_erea, Resturant_genre, Resturant_message, member_id) VALUE (:Restaurant_name, :Restaurant_erea, :Restaurant_genre, :Restaurant_message, :member_id)";
+    $stmt = $dbh->prepare($sql);
+   //$stmt1 = $dbh->prepare($sql1);
+    $stmt->bindValue(':Restaurant_name', $Restaurant_name, PDO::PARAM_STR);
+    $stmt->bindValue(':Restaurant_erea', $Restaurant_erea, PDO::PARAM_STR);
+    $stmt->bindValue(':Restaurant_genre', $Restaurant_genre, PDO::PARAM_STR);
+    $stmt->bindValue(':Restaurant_message', $Restaurant_message, PDO::PARAM_STR);
+    $stmt->bindValue(':member_id', $member_id, PDO::PARAM_INT);
+    if($stmt->execute()){
+        return TRUE;
+    }else{
+        return FALSE;
+    }
+}
+
+function select_id($dbh, $member_id){
+    $sql = "SELECT * FROM resutaurant WHERE member_id = :member_id LIMIT 1";
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindValue(':member_id', $member_id, PDO::PARAM_INT);
+    if($stmt->execute()){
+        return TRUE;
+    }else{
+        return FALSE;
+    }
+}
+
 function select_member($dbh, $email, $password) {
 
     $sql = 'SELECT * FROM members WHERE email = :email LIMIT 1';
@@ -63,10 +91,26 @@ function select_member($dbh, $email, $password) {
     }
 }
 
+
+
 function select_members($dbh) {
 
     $sql = "SELECT name FROM members";
     $stmt = $dbh->prepare($sql);
+    $stmt->execute();
+    while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+        $data[] = $row;
+    }
+    return $data;
+}
+
+function select_resutaurants($dbh, $member_id) {
+
+    //echo $member_id;
+
+    $sql = "SELECT Resturant_name, Resturant_erea, Resturant_genre, Resturant_message FROM resutaurant WHERE member_id = :member_id";
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindValue(':member_id', $member_id, PDO::PARAM_INT);
     $stmt->execute();
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
         $data[] = $row;

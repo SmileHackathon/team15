@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <title>HTML+CSS トレーニング</title>
-</head>
-
-<body>
-    <button onclick="location.href='./login.php'">ガチャを作る！</button>
-</body>
-=======
 <?php
 // セッションの開始 
 session_start();
@@ -29,8 +14,8 @@ if (!isset($_SESSION["textGenre"])) {
 if (!isset($_SESSION["textMessage"])) {
 	$_SESSION["textMessage"] = "";
 }
-if (!isset($_SESSION["errorName"])) {
-	$_SESSION["errorName"] = "";
+if	 (!isset($_SESSION["errorName"])) {
+$_SESSION["errorName"] = "";
 }
 if (!isset($_SESSION["errorArea"])) {
 	$_SESSION["errorArea"] = "";
@@ -42,40 +27,27 @@ if (!isset($_SESSION["errorMessage"])) {
 	$_SESSION["errorMessage"] = "";
 } ?>
 
->>>>>>> b5eabc3f3112e896ad307efc2b03643663917bc7
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
-    <meta charset="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
     <title>HTML+CSS トレーニング</title>
 </head>
 
 <body>
-<<<<<<< HEAD
-    <button onclick="location.href='./login.php'">ガチャを作る！</button>
-</body>
-=======
-    <!-- ヘッダー-->
-    <div class="header">
-        <div>logo</div>
-    </div>
-
-
     <div class="container">
         <div class="contentheader">今回のお題
         </div>
-        <div class="contentbody"> 『はこだてのおすすめの居酒屋』
-        </div><!--
+        <div class="contentbody"> 「はこだてのおすすめのカフェ」
+        </div>
         <div class="contentfooter"> 投稿する
-        </div>-->
+        </div>
     </div>
 
-    <h2><span class="underbar_dotted">入力フォーム</span></h2>
-
+    <h2>入力フォーム</h2>
     <!-- 入力フォームをまとめる  form タグ(method：データの送信方法、action：フォーム の送信先ページ) -->
-    <form method="POST" action="./formCheck.php" id="inputForm">
+    <form method="GET" action="./dataRegist.php" id="inputForm">
         <!-- ニックネーム入力-->
         <p>1. お店の名前</p>
         <input type="text" name="textName" value="<?php echo $_SESSION["textName"]; ?>">
@@ -102,7 +74,7 @@ if (!isset($_SESSION["errorMessage"])) {
 			echo "<div class=\"errorMessage\">" . $_SESSION["errorGenre"] . "</div>";
 		}
 		?>
-        <p>4. 一言メッセージ</p>
+        <p>3. 一言メッセージ</p>
         <input type="text" name="textMessage" value="<?php echo $_SESSION["textMessage"]; ?>">
         <?php
 		// 未入力チェックでエラーの場合は、エラーメッセージを表示 
@@ -111,7 +83,7 @@ if (!isset($_SESSION["errorMessage"])) {
 		}
 		?>
         <!-- 送信ボタン    -->
-        <p><input class="push_bottom" type="submit"></p>
+        <p><input type="submit"></p>
     </form>
     <button onclick="location.href='./views/signup_view.php'">新規登録</button>
     <button onclick="location.href='./views/login_view.php'">ログイン</button>
@@ -131,5 +103,3 @@ unset($_SESSION["errorArea"]);
 unset($_SESSION["errorGenre"]);
 unset($_SESSION["errorMessage"]);
 ?>
->>>>>>> 5ac432cc23e95faa8a49fb507fc1f1b59294b8f3
->>>>>>> b5eabc3f3112e896ad307efc2b03643663917bc7

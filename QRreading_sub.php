@@ -5,7 +5,7 @@ session_start();
 $textData = $_SESSION["textData"];
 // おすすめのカフェの名前
 $textDataName = $_SESSION["textDataName"];
-//　おすすめのカフェのURL
+//おすすめのカフェのURL
 $textDataURL = $_SESSION["textDataURL"];
 // SNSを知らせるか選択
 $selectData = $_SESSION["selectData"]; 
@@ -20,14 +20,16 @@ $selectData = $_SESSION["selectData"];
 </head>
 
 <body>
-    <h2>入力したデータ</h2>
-    <table>
-        <tr>
-            <th>テキスト</th>
-            <th>日付</th>
-            <th>項目</th>
-        </tr>
-        <?php
+    <form method="POST" action="./QRview.php" id="inputForm">
+        <form method="POST" action="./QRreuslt.php" id="inputForm1">
+            <h2>入力したデータ</h2>
+            <table>
+                <tr>
+                    <th>テキスト</th>
+                    <th>日付</th>
+                    <th>項目</th>
+                </tr>
+                <?php
         echo "<tr>";
         echo "<td>" . $textData . "</td>";
         echo "<td>" . $textDataName . "</td>";
@@ -35,7 +37,9 @@ $selectData = $_SESSION["selectData"];
         echo "<td>" . $selectData . "</td>";
         echo "</tr>"; 
         ?>
-    </table>
+            </table>
+            <p><input type="submit"></p>
+        </form>
 </body>
 
 </html>

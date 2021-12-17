@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errs)) {
         session_regenerate_id(true);
         $_SESSION['member'] = $member;
-        header('Location: ' . SITE_URL . 'index.php');
+        header('Location: ' . SITE_URL . 'form.php');
         exit;
     }
 }
