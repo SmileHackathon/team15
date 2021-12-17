@@ -36,7 +36,7 @@ $textMessage = $_SESSION["textMessage"];
         echo "</tr>";
         ?>
     </table>
-    <button onclick="location.href='./QRcreate.php'">遷移</button>
+    <button onclick="location.href='./dataRegist.php'">遷移</button>
 </body>
 
 </html>

@@ -8,7 +8,7 @@
 
 <body>
     <h1>ログイン</h1>
-    <form action="../login.php" method="POST">
+    <form action="./login.php" method="POST">
         <p>メールアドレス：<input type="text" name="email">
             <?php if (isset($errs['email'])) {
                 echo html_escape($errs['email']);
@@ -20,7 +20,7 @@
             }
             ?></p>
         <p><input type="submit" value="ログイン"></p>
-        <p><a href="./signup_view.php">新規登録</a></p>
+        <p><a href="./views/signup_view.php">新規登録</a></p>
     </form>
 </body>
 
