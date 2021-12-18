@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+/***  ページ全体  ***/
+body {
+    background-color: #F6FCFF;  /* 背景の色 */
+    text-align: center;  /* 文章センターそろえ */
+}
+
+/*** スマホ画面 ***/
+
+@media screen and (min-width: 450px) {  /* 画面の横幅が450以上の場合 */
+
+    /*  header  */
+    div.sample {
+        width:100%;
+        height:100px;
+        margin:0px 0px 80px 0px;
+        padding:6px;
+        background-color: #6DD2FF;
+    }
+    .header_logo {
+        height: 100px;
+    }
+
+    /* ログインタイトル */
+    .sub_title{
+        font-size: 53px;
+    }
+    .under_bar {
+        background: linear-gradient(transparent 60%, #ffc400 60%);  /* 蛍光ペン風の線を引く */
+    }
+
+    /* メールアドレス、パスワード */
+    p {
+      margin: 70px 0px;
+      font-size: 48px;
+    }
+
+     /* 送信ボタン */
+    .push_button {
+        font-size: 50px;
+        width: 400px;
+        padding: 20px;
+        border: 5px solid #6E6E6E;
+        border-radius: 10px;
+    }
+
+    /* 送信ボタン */
+    .push_bottom {
+        font-size: 24px;
+        width: 180px;
+        padding: 8px;
+        margin-bottom: 2%;
+        border: 2px solid #6E6E6E;
+        margin-bottom: 3%;
+    }
+}
+
+
+/*** PC画面 ***/
+@media screen and (max-height: 650px) {  /* 画面の縦サイズが650px以内の場合 */
+
+    /*  header(ヘッダー)  */
+    div.sample {
+        height:60px;
+        margin:0px 0px 50px 0px;
+    }
+    .header_logo {
+        height: 60px;
+    }
+
+    /* ログインタイトル */
+    .sub_title {
+        font-size: 24px;
+    }
+
+    /* メールアドレス、パスワード */
+    p {
+      margin: 40px 0px;
+      font-size: 22px;
+    }
+
+    /* 送信ボタン */
+    .push_button {
+        font-size: 24px;
+        width: 180px;
+        padding: 10px;
+        margin-bottom: 2%;
+        border: 2px solid #6E6E6E;
+        margin-bottom: 3%;
+    }
+}
