@@ -9,8 +9,6 @@
 </head>
 
 <body>
-    <button onclick="location.href='./login.php'">ガチャを作る！</button>
-</body>
     <!-- ヘッダー-->
     <div class="sample">
         <img class="header_logo" src="logo.png" style="float: left;">
@@ -20,4 +18,5 @@
         <span class="button_text">ガチャを作る！</span>
     </button>
 </body>
-</html> 
+
+</html>
