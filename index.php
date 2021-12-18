@@ -13,9 +13,10 @@
     <div class="sample">
         <img class="header_logo" src="logo.png" style="float: left;">
     </div>
-
     <!-- ガチャを作るボタン-->
     <button class="make_button" onclick="location.href='./login.php'">
         <span class="button_text">ガチャを作る！</span>
     </button>
 </body>
+
+</html>
